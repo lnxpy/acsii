@@ -3,8 +3,8 @@ import argparse
 import sys
 import pathlib
 
-from constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
-from utils.vision import ImageCoder
+from .constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
+from .utils.vision import ImageCoder
 
 
 parser = argparse.ArgumentParser(
