@@ -1,11 +1,9 @@
-"""Console script for acsii."""
 import argparse
 import sys
 import pathlib
 
 from .constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
 from .utils.vision import ImageCoder
-
 
 parser = argparse.ArgumentParser(
     description=APPLICATION_DESCRIPTION,
@@ -41,21 +39,32 @@ parser.add_argument(
     default=1
 )
 
-def main():
+parser.add_argument(
+    "-s",
+    "--show-size",
+    action="store_true",
+    help="show the ASCII image size as well",
+)
+
+
+def main() -> int:
     args = parser.parse_args()
 
     coder = ImageCoder(args.image)
     output = coder.serialize(args.width_shift, args.height_shift)
-    coder.calculate_size()
 
     if args.output:
         with open(args.output, 'w') as file:
             for line in output:
-                file.write(''.join(line)+'\n')
+                file.write(''.join(line) + '\n')
+            print(f'Saved file: {args.output}')
     else:
         for line in output:
             print(''.join(line))
-        print(f'{coder.width}x{coder.height} size!')
+
+    if args.show_size:
+        coder.calculate_size()
+        print(f'Image size: {coder.width}x{coder.height}')
 
     return 0
 
