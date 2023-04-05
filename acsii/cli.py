@@ -26,20 +26,6 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '--height-shift',
-    type=int,
-    help='shift off height',
-    default=1
-)
-
-parser.add_argument(
-    '--width-shift',
-    type=int,
-    help='shift off width',
-    default=1
-)
-
-parser.add_argument(
     "-s",
     "--show-size",
     action="store_true",
@@ -51,7 +37,7 @@ def main() -> int:
     args = parser.parse_args()
 
     coder = ImageCoder(args.image)
-    output = coder.serialize(args.width_shift, args.height_shift)
+    output = coder.serialize()
 
     if args.output:
         with open(args.output, 'w') as file:
