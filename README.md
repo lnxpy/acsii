@@ -8,6 +8,6 @@ An [Image Processing](https://en.wikipedia.org/wiki/Digital_image_processing) pr
 - Mohammad Yasin Davoodeh (Assistant)
 
 ##### Developers/Students
-- Ali Reza (Sadra) Yahyapour
-- Abolfazl (Kian) Soleymani
-- ___ Esmaeil Beigi
+- Ali Reza (Sadra) Yahyapour (Implementation)
+- Abolfazl (Kian) Soleymani (R&D)
+- Mohammad Amin Esmaeilbeigi (R&D)
