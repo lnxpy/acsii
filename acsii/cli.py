@@ -3,7 +3,7 @@ import sys
 import pathlib
 
 from acsii.constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
-from acsii.utils.vision import ImageCoder
+from acsii.utils.vision import Encoder
 
 parser = argparse.ArgumentParser(
     description=APPLICATION_DESCRIPTION,
@@ -32,12 +32,21 @@ parser.add_argument(
     help="show the ASCII image size as well",
 )
 
+parser.add_argument(
+    "-t",
+    "--typeset",
+    type=str,
+    choices=['nums', 'alphs', 'syms'],
+    default='syms',
+    help="ASCII characters type",
+)
+
 
 def main() -> int:
     args = parser.parse_args()
 
-    coder = ImageCoder(args.image)
-    output = coder.serialize()
+    encoder = Encoder(args.image, args.typeset)
+    output = encoder.serialize()
 
     if args.output:
         with open(args.output, 'w') as file:
@@ -49,8 +58,8 @@ def main() -> int:
             print(''.join(line))
 
     if args.show_size:
-        coder.calculate_size()
-        print(f'Image size: {coder.width}x{coder.height}')
+        encoder.calculate_size()
+        print(f'Image size: {encoder.width}x{encoder.height}')
 
     return 0
 
