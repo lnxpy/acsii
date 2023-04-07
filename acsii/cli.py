@@ -3,6 +3,7 @@ import sys
 import pathlib
 
 from acsii.constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
+from acsii.constants.patterns import BASE_PATTERN
 from acsii.utils.vision import Encoder
 
 parser = argparse.ArgumentParser(
@@ -36,7 +37,7 @@ parser.add_argument(
     "-t",
     "--typeset",
     type=str,
-    choices=['nums', 'alphs', 'syms'],
+    choices=BASE_PATTERN.keys(),
     default='syms',
     help="ASCII characters type",
 )
