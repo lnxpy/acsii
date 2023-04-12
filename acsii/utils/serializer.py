@@ -11,7 +11,5 @@ def serialize(density: int, typeset: str) -> str:
     Returns:
         a character corresponding to the density value
     """
-    print(typeset)
-    print(len(BASE_PATTERN[typeset]))
 
     return BASE_PATTERN[typeset][density * len(BASE_PATTERN[typeset]) // 256]
