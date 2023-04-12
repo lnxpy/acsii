@@ -15,8 +15,7 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    '-i',
-    '--image',
+    'image',
     type=pathlib.Path,
     help='path to image file',
 )
