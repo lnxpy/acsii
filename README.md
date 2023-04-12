@@ -3,6 +3,35 @@
 
 An [Image Processing](https://en.wikipedia.org/wiki/Digital_image_processing) project for turning images into ASCII arts. This project is served as a Python package.
 
+##### Installation
+Make sure you have Git and pip installed on your machine then run the following command.
+```sh
+$ pip install git+http://github.com/lnxpy/acsii.git
+```
+
+##### Usage
+```sh
+$ acsii --help
+usage: acsii [-h] [-o OUTPUT] [-s] [-t {nums,alphs,syms,syms2}] [--version]
+             image
+
+ACSII (not ASCII) is an image processing project that is capable of turning real images into ASCII arts.
+
+positional arguments:
+  image                 path to image file
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        output (text) file
+  -s, --show-size       show the ASCII image size as well
+  -t {nums,alphs,syms,syms2}, --typeset {nums,alphs,syms,syms2}
+                        ASCII characters type
+  --version             show program's version number and exit
+
+This project is made for learning and college work purposes.
+```
+
 ##### Professor
 - Vadood Keramati
 - Mohammad Yasin Davoodeh (Assistant)
