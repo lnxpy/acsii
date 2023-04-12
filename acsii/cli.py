@@ -2,9 +2,11 @@ import argparse
 import sys
 import pathlib
 
-from acsii.constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION
+from acsii.constants.information import APPLICATION_DESCRIPTION, EPILOG_DESCRIPTION, VERSION_INFO
 from acsii.constants.patterns import BASE_PATTERN
 from acsii.utils.vision import Encoder
+
+from acsii import __version__
 
 parser = argparse.ArgumentParser(
     description=APPLICATION_DESCRIPTION,
@@ -40,6 +42,12 @@ parser.add_argument(
     choices=BASE_PATTERN.keys(),
     default='syms',
     help="ASCII characters type",
+)
+
+parser.add_argument(
+    '--version',
+    action='version',
+    version=VERSION_INFO.format(__version__),
 )
 
 
